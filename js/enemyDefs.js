@@ -1,0 +1,124 @@
+var enemies = [
+	{//slime- 0
+		name:'nostalgic slime',
+		Agility:10,
+		MaxHP:8,
+		MaxMP:0,
+		Attack:5,
+		Defense:0,
+		XP:10,
+		gold:15,
+		image:2
+	},
+	{//dog -1
+		name:'dog',
+		Agility:5,
+		MaxHP:5,
+		MaxMP:0,
+		Attack:6,
+		Defense:1,
+		XP:13,
+		gold:20,
+		image:0
+	},
+	{//thin man -2
+		name:'thin man',
+		Agility:5,
+		MaxHP:10,
+		MaxMP:0,
+		Attack:7,
+		Defense:1,
+		XP:15,
+		gold:25,
+		image:1
+	},
+	{//3
+		name:'frenzied bat',
+		Agility:5,
+		MaxHP:13,
+		MaxMP:0,
+		Attack:12,
+		Defense:2,
+		XP:25,
+		gold:35,
+		image:3
+	}	
+	,
+	{//4
+		name:'bat',
+		Agility:5,
+		MaxHP:9,
+		MaxMP:0,
+		Attack:8,
+		Defense:2,
+		XP:18,
+		gold:30,
+		image:6
+	}	
+,
+	{//5
+		name:'bear',
+		Agility:5,
+		MaxHP:15,
+		MaxMP:0,
+		Attack:10,
+		Defense:3,
+		XP:30,
+		gold:40,
+		image:5
+	}	
+,
+	{///needs to be done 6
+		name:'Ninja',
+		Agility:5,
+		MaxHP:25,
+		MaxMP:4,
+		Attack:17,
+		Defense:5,
+		XP:40,
+		gold:50,
+		image:12,
+		spell:$.spell[0]
+	}
+,
+	{//7
+		name:'yeti',
+		Agility:5,
+		MaxHP:21,
+		MaxMP:0,
+		Attack:14,
+		Defense:7,
+		XP:35,
+		gold:50,
+		image:4
+	}	
+,
+	{//8
+		name:'Final Boss: Myself',
+		Agility:5,
+		MaxHP:50,
+		MaxMP:2,
+		Attack:20,
+		Defense:8,
+		XP:150,
+		gold:140,
+		image:11,
+		spell:$.spell[1],
+		runChance:-1
+	}
+,
+	{//9
+		name:'Cave Dwelling Ninja',
+		Agility:5,
+		MaxHP:40,
+		MaxMP:4,
+		Attack:19,
+		Defense:7,
+		XP:150,
+		gold:200,
+		image:8,
+		item:armor[3],
+		spell:$.spell[0],
+		runChance:-1
+	}
+];

@@ -1,0 +1,215 @@
+		body{
+					
+  		  	margin: 0px;
+  		  	  background-color: rgba(30, 30, 130, .85);
+			color: white;
+		}
+		
+		canvas#main, canvas#back, canvas#front {
+			left:50%;margin-left:-320px;
+			position: absolute;
+			
+		 	border:1px solid #fff;
+		 	border-radius:3px;
+		}
+		
+		a{
+		   	font-size:20px;
+		   	font-weight:bold;
+			color:white;
+		}
+		
+		.smalltxt{
+		   	font-size:16px;
+		}
+		.revtxt{
+		   	font-size:12px;
+		}
+		
+		.holdingRect{
+			color: white;
+			margin: 10px;
+		  	opacity:1.0;
+			padding: 5px;
+		   	background-color: rgba(30, 30, 30, 1.0);
+		 	border:3px solid #888888;
+		 	border-radius:3px;
+			overflow: auto;
+		}
+		
+		.battleWindow{
+			 position: absolute;
+			 display:none;
+		     background-color: rgba(30, 30, 30, 1.0);
+		}
+		
+		canvas#enemyImage{
+		    width: 200px; height: 200px; 
+		    image-rendering: optimizeSpeed;             /* Older versions of FF          */
+		     image-rendering: -moz-crisp-edges;          /* FF 6.0+                       */
+		     image-rendering: -webkit-optimize-contrast; /* Safari                        */
+		     image-rendering: -o-crisp-edges;            /* OS X & Windows Opera (12.02+) */
+		     image-rendering: pixelated;                 /* Awesome future-browsers       */
+		     -ms-interpolation-mode: nearest-neighbor;   /* IE                            */
+		}
+		
+		#enemyPlate{
+			background-color:gray;
+			
+		}
+		
+		#deathmenu{
+			left:50%;margin-left:-320px;
+			position: absolute;
+			font-size: 50px;
+			text-align: center;
+			display:none;
+	     	width: 640px;
+			top:25%;
+		}
+		
+		#genMessage{
+	     width: 320px ;
+		 height: 200px;
+		 top:368px;
+		 display:none;
+		 position: absolute;
+	     background-color: rgba(30, 30, 30, 1.0);
+		}
+		
+		#titleScreen{
+			left:50%;margin-left:-320px;
+			position: absolute;
+			font-size: 50px;
+			text-align: center;
+	     	width: 640px;
+			top:25%;
+	
+		}
+		
+		#endScreen{
+   	     width: 320px ;
+   		 height: 200px;
+   		 top:368px;
+   		 	display:none;
+   		 	position: absolute;
+   	     	background-color: rgba(30, 30, 30, 1.0);
+		}
+		
+		#options{
+			left:50%;margin-left:-320px;
+      		 position: absolute;
+			display:none;
+		}
+		
+		#storeMenu{
+   	     	width: 320px ;
+   		 	height: 405px;
+   		 	top:135px;
+			 position:absolute;
+			 display:none;
+		     background-color: rgba(30, 30, 110, .85);
+		}
+		
+		
+		#inventoryMenu{
+			font-size: 13px;
+			 overflow: auto;
+			 position:absolute;
+			 display:none;
+		     background-color: rgba(30, 30, 130, .85);
+		}
+		
+		
+		#titlePlate
+		{
+			text-align:left;
+		   	font-size:14px;
+		   	font-weight:bold;
+			width:125px;
+		}
+		
+		
+		.invItems{
+			overflow: auto;
+			min-height:225px;
+			max-height:225px;
+		}
+		
+		#spellsPlate
+		{	
+			overflow: auto;
+			min-height:105px;
+			max-height:105px;
+		}
+		
+		#outputPlate
+		{	
+			overflow: auto;
+			min-height:155px;
+			max-height:155px;
+		}
+	    
+		.battleItemContainer{
+			color: white;
+			margin: 10px;
+			padding: 5px;
+		   	background-color: rgba(30, 30, 30, 1.0);
+		 	border:3px solid #888888;
+		 	border-radius:3px;
+		}
+		
+		.mp{
+			font-size: 9px;
+		}
+		
+		.centertext{
+			text-align:center;
+		}
+		
+		
+		.center{
+	     	width: 320px ;
+		 	height: 568px;
+			left:50%;
+			margin-left:-160px;
+		}
+
+		.right{
+			text-align:right;
+		}
+
+		button{
+
+		    background: #000;
+		    background: linear-gradient(#999999, #282828);
+		    border-radius: 9px 9px 9px 9px;
+		    font-size: 16px;
+		    font-weight: 400;
+			width:130px;
+		    cursor: pointer;
+		    border:0;
+		    color: #ccc;
+		    margin: 0.3em 0.3em;
+		    padding: 10px 10px;
+		   	text-shadow: 0px 2px 2px rgba(0, 0, 0, 1.00);
+		}
+		button:active {
+		  text-shadow: 0 0 30px #fff, 0 0 20px #fff, 0 0 10px #fff;
+		  top: 1px;
+		  background: linear-gradient(#282828, #999999);
+		  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+		}
+
+		button:disabled{
+			opacity:.5;
+		}
+
+		button:hover {
+		  text-shadow: 0 0 4px #999, 0 0 7px #fff, 0 0 10px #fff;
+		}
+
+		button:focus {
+		  outline: none;
+		}
+
