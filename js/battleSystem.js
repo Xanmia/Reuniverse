@@ -204,8 +204,8 @@ $.battleSystem.prototype.draw = function(){
 	this.hp.innerHTML = this.player.HP;
 	this.mp.innerHTML = this.player.MP;
 	if(this.turn==0){
-		this.screen.style.marginLeft = (-160) + Math.random()*this.effect + 'px';//Math.random()*this.opac*4 + 'px';
-		this.screen.style.marginTop = Math.random()*this.effect + 'px';
+		$.container.style.marginLeft = (Math.random()*this.effect) + 'px';//Math.random()*this.opac*4 + 'px';
+		$.container.style.marginTop = Math.random()*this.effect + 'px';
 	}
 	else{
 

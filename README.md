@@ -1,1 +1,5 @@
-# Reuniverse
+# Reuniverse #
+
+
+#How to Play#
+

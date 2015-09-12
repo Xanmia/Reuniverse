@@ -33,7 +33,7 @@ $.worldCreator.prototype.change = function(){
 	if ($.currentMap.background){
 		for (var y = 0; y < 25; y++) {
 	        for (var x = 0; x < 60; x++) {
-				$.backctx.drawImage($.types[6], (x*25)-4, (y*25)-3); //4 is for offset of waves
+				$.backctx.drawImage($.types[6], (x*25)-4, (y*25)-3); //-4 is for offset of waves
 	        }
 	    }
 	}
@@ -52,7 +52,7 @@ $.worldCreator.prototype.change = function(){
 	
 	if(!$.currentMap.lighting)
 	{
-			$.frontctx.save();
+		$.frontctx.save();
 	    $.frontctx.fillStyle = "#000";
 	    $.frontctx.strokeStyle = $.frontctx.fillStyle;
 		$.frontctx.fillRect(0,0,$.W,$.H);
@@ -60,7 +60,7 @@ $.worldCreator.prototype.change = function(){
 	    $.frontctx.fillStyle = 'rgba(0, 0, 0, .55)';
 		$.frontctx.globalCompositeOperation = 'destination-out';
 	    $.frontctx.strokeStyle = $.frontctx.fillStyle;
-		$.frontctx.arc(($.H/2) + 50, ($.W/2)-25, 75, 0, Math.PI*2, true);
+		$.frontctx.arc(($.W/2) + 12.5, ($.H/2)+12.5, 75, 0, Math.PI*2, true);
 		$.frontctx.fill();
 		$.frontctx.restore();
 		

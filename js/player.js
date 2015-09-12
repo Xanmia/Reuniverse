@@ -30,6 +30,9 @@ $.player = function(){
 	
 	this.damageTick = 60;//60
 	this.damageTimer = 60;
+	this.moveTick = 8;//60
+	this.moveTimer = 8;
+	
 	this.recievingDamage = 0;
 	this.opac = .75;
 	
@@ -145,27 +148,32 @@ $.player.prototype.levelUp = function(xp){
 }
 
 $.player.prototype.update = function(){
-	if ($.battle == undefined && $.newStore == undefined && $.newMessage == undefined && this.inventoryScreen.style.display !="block"){
-		if($.keys.s){
-			this.moveDown();
-			$.keys.s = 0;
-		}
+	this.moveTimer += $.dt; 
+	if ($.battle == undefined && $.newStore == undefined && document.getElementById('endScreen').style.display != "block" &&  $.newMessage == undefined && this.inventoryScreen.style.display !="block"){
+		if(this.moveTimer>this.moveTick)
+		{
+			if($.keys.s){
+				this.moveDown();
+				//$.keys.s = 0;
+			}
 	
-		if($.keys.d){
-			this.moveRight();
-			$.keys.d = 0;
-		}
+			if($.keys.d){
+				this.moveRight();
+				//$.keys.d = 0;
+			}
 	
-		if($.keys.a){
-			this.moveLeft();
-			$.keys.a = 0;
-		}	
-		if($.keys.w){
-			this.moveUp();
-			$.keys.w = 0
-		}
-		if($.keys.space){
-			//$.reverse = !$.reverse;
+			if($.keys.a){
+				this.moveLeft();
+				//$.keys.a = 0;
+			}	
+			if($.keys.w){
+				this.moveUp();
+				//$.keys.w = 0
+			}
+			if($.keys.space){
+				//$.reverse = !$.reverse;
+			}
+			this.moveTimer=0;
 		}
 	}
 	if (!this.validMove(this.x,this.y)){

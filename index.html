@@ -3,11 +3,13 @@
 <head>
     <title></title>
 	<link rel="stylesheet" href="style/main.css" type="text/css" media="screen">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
 </head>
 <body>
+
     <script>var $ = {};</script>
-<br>
 	<canvas id="back"></canvas>
 	<canvas id="main" ></canvas>
 	<canvas id="front" onclick="$.onclick()"></canvas>
@@ -40,13 +42,14 @@
 	<script src="js/store.js"></script>
 	<script src="js/person.js"></script>
 
+
 		<div id="options" ><button onclick="$.Player.showInventory();">Inventory</button><button id="btnReverse" onclick="$.worldTravel();$.reverse = !$.reverse;"><div id='revText' class='revtxt'>Go to REVearth</div></button>
 			</div>
+<div id="container">
 
 
-
-	<div id="battleWindow" class="battleWindow center">
-		<div id="titlePlate" class="battleItemContainer">
+	<div id="battleWindow" class="holdingRect">
+		<div id="titlePlate" class="holdingRect">
 			<div>Name: Cloud</div>
 			<div>HP: <div id='hp'></div></div>
 			<div>MP: <div id='mp'></div></div>
@@ -57,34 +60,36 @@
 		
 		</div>
 		
-		<div id="actionPlate" class="battleItemContainer">
+		<div id="actionPlate" class="holdingRect">
 			<button onclick="$.battle.actionAttack();">Attack</button>
 			<button onclick="$.battle.showSpells();">Magic</button>
 			<button onclick="$.battle.actionRun();">Run</button>
 		</div>
-		<div id="spellsPlate" class="battleItemContainer">
+		<div id="spellsPlate" class="holdingRect">
 			
 		</div>
-		<div id="outputPlate" class="battleItemContainer" onclick="$.battle.showActions();">
+		<div id="outputPlate" class="holdingRect" onclick="$.battle.showActions();">
 			
 		</div>
 		<div id="battleBack" ><button onclick="$.battle.showActions();">Back</button></div>
 		
 	</div>
 
-<div id="deathmenu" class="center">You're Dead
+<div id="deathmenu">You're Dead
 	<div><a href="">REPLAY</a></div>
 	</div>
-<div id="genMessage" class="center holdingRect"  onclick="$.newMessage.exit();"></div>	
+	
+<div id="genMessage" class="holdingRect messageMenu"  onclick="$.newMessage.exit();"></div>	
 
-<div id="storeMenu"  class="holdingRect center" >
+<div id="storeMenu"  class="holdingRect" >
 	<div id="storeGold" class="holdingRect right"></div>
 	Hurry up and buy something! You have a world to save!
 	<div id="storeItems" class="holdingRect invItems"></div>
 	<div class="right">
 	<button onclick="$.newStore.exit();">Exit</button></div>
 </div>
-<div id="inventoryMenu" class="center ">
+
+<div id="inventoryMenu"  class="holdingRect" >
 	<div id="playerGold" class="holdingRect right"></div>
 	<div id="playerstats" class="holdingRect"></div>
 	<div id="inventoryOptions"><button onclick="$.Player.showSpells();">Magic</button><button onclick="$.Player.showEquipment();">Equip</button></div>
@@ -93,14 +98,13 @@
 </div>
 
 	
-<div class="center" id="titleScreen">ReUniVerse
+<div id="titleScreen">ReUniVerse
 	<div class="smalltxt">with Permadeath: You have been warned</div>
 		<div class="smalltxt">by <a  class="smalltxt" href="http:\\twitter.com\xanmia">@Xanmia</a></div>
 	<div><button onclick="$.startPlaying();">Play</button></div>
 </div>
 
-<div  class="center holdingRect" id="endScreen">Congratulations, you have defeated yourself and saved both worlds from dispair!  Unfortunately, you are also dead since you did indeed kill yourself... Thanks for playing!</div>
-
-
+<div  class="messageMenu holdingRect" id="endScreen">Congratulations, you have defeated yourself and saved both worlds from dispair!  Unfortunately, you are also dead since you did indeed kill yourself... Thanks for playing!</div>
+</div>
 </body>
 </html>

@@ -115,7 +115,7 @@ $.endcityMapping = //done///
 	 graph: $.cityMapping.graph,
 	 PlayerInit:{x:25,y:150},
 	 POI:[{x:0,y:6,map:undefined, returnX:350 , returnY:475}],
-	 People:[{x:300,y:200,image:11, text: function() {$.newMessage = new $.message("You're me??? So you're the evil wizard invading these people's land! Off with your head!", function() {$.battle = new $.battleSystem(8, function(){document.getElementById('endScreen').style.display = "block";} );} );}}]
+	 People:[{x:300,y:200,image:11, text: function() {$.newMessage = new $.message("You're me??? So you're the evil wizard invading these people's land! Off with your head!", function() {$.battle = new $.battleSystem(8, function(){$.battle.close();document.getElementById('endScreen').style.display = "block";} );} );}}]
  }
  
 $.caveMapping = ///done//////////

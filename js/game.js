@@ -13,8 +13,10 @@ $.setup = function() {
 	$.front = document.getElementById('front');
 //	$.mainmenu = document.getElementById('container');
 	$.deathmenu = document.getElementById('deathmenu');
-    $.W = 640; //window.innerWidth; 320
-    $.H = 568;//window.innerHeight; 568
+	$.container = document.getElementById('container');
+	
+    $.W = window.innerWidth<640?window.innerWidth:640; //320
+    $.H = window.innerHeight<568?window.innerHeight:568;// 568
 	
     $.mainctx = $.main.getContext('2d');
 	$.backctx = $.back.getContext('2d');
@@ -28,10 +30,17 @@ $.setup = function() {
 	
     $.front.width = $.W; //window.innerWidth;
     $.front.height = $.H; //window.innerHeight;
+	
+	$.container.style.width = $.W + "px";
+	$.container.style.height = $.H + "px";
+	
  	$.playing = false;
 	
 	window.addEventListener( 'keydown', $.keydown );
 	window.addEventListener( 'keyup', $.keyup );
+	$.front.addEventListener('touchstart',$.touchstart);
+	$.front.addEventListener('touchmove',$.touchMove );
+	$.front.addEventListener('touchend',$.touchend );
 	
 	$.keys = {
 		w: 0,
@@ -126,14 +135,15 @@ $.updateDelta = function(){
 $.loop = function () {
     requestAnimFrame($.loop);
 	  $.updateDelta();
-//	  if($.battle == undefined && $.newStore == undefined && $.newMessage == undefined && $.Player.inventoryScreen.style.display !="block" && $.deathmenu.style.display !="block"){
-	//		  $.closeMenu();
-//	  }
-//	  else
-//	  {
-//		  $.closeMenu();
-//	  }
+
 if($.playing){
+  if($.battle == undefined && $.newStore == undefined && $.newMessage == undefined && document.getElementById('endScreen').style.display != "block" && $.Player.inventoryScreen.style.display !="block" && $.deathmenu.style.display !="block"){
+	  $.container.style.display = "none";
+  }
+  else
+  {
+	  $.container.style.display = "block";
+  }
 	$.Player.update();
 	 $.world.update();
 	var i = $.npc.length; while( i-- ){ $.npc[ i ].update() };
@@ -201,7 +211,36 @@ $.createStarsBackground = function(){
 	    $.mainctx.fillRect(X,Y,1,1);
 
     }
-	$.mainctx.drawImage($.playerSprite, 313,175);
+	$.mainctx.drawImage($.playerSprite, ($.W/2)-13,175);
+};
+
+$.touchstart = function (e) {
+    e.preventDefault();
+	$.Player.moveTimer = 7;
+	e = e.touches ? e.touches[e.touches.length - 1] : e;
+	if(e.clientX < $.W/4){$.keys.a = 1;}
+	if(e.clientX > $.W-($.W/4)){$.keys.d = 1;}
+	if(e.clientY < $.H/4){$.keys.w = 1;}
+	if(e.clientY > $.H - ($.H/4)){$.keys.s = 1;}
+	
+	if($.keys.a==0 && $.keys.w==0 && $.keys.s==0 && $.keys.d==0)  
+	{
+		 if($.newMessage!=undefined){$.newMessage.exit();}
+		 else if($.battle!=undefined){ $.battle.showActions();}
+		 else{$.onclick();}
+	}
+};
+
+$.touchmove = function (e) {
+    e.preventDefault();
+};
+
+$.touchend = function (e) {
+    e.preventDefault();
+	$.keys.a = 0;
+	$.keys.d = 0;
+	$.keys.w = 0;
+	$.keys.s = 0;
 };
 
 $.startPlaying = function(){
@@ -214,6 +253,7 @@ $.startPlaying = function(){
 }
 
 $.keydown = function(e){
+	
 	if( e.keyCode === 32 ){  }//space down
 	if( e.keyCode === 87 ){ $.keys.w = 1; }
 	if( e.keyCode === 83 ){ $.keys.s = 1; }
@@ -222,6 +262,7 @@ $.keydown = function(e){
 };
 
 $.keyup = function(e){
+		$.Player.moveTimer = 9;
 	if( e.keyCode === 32 ){ if($.newMessage!=undefined){$.newMessage.exit();}
 							else if($.battle!=undefined){ $.battle.showActions();}
 							else{$.onclick();}
@@ -230,6 +271,7 @@ $.keyup = function(e){
 	if( e.keyCode === 83 ){ $.keys.s = 0; }
 	if( e.keyCode === 68 ){ $.keys.d = 0; }
 	if( e.keyCode === 65 ){ $.keys.a = 0; }
+
 };
 
 
